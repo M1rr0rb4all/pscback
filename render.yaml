@@ -1,15 +1,15 @@
 services:
-  build:
-    packages:
-      - curl
-      - build-essential
-      - pkg-config
-      - libssl-dev
-      - rustc
   - type: web
     name: uk-company-ownership-api
     env: python
     region: oregon
+    build:
+      packages:
+        - curl
+        - build-essential
+        - pkg-config
+        - libssl-dev
+        - rustc
     buildCommand: "pip install -r requirements.txt"
     startCommand: "uvicorn main:app --host 0.0.0.0 --port $PORT"
     envVars:
