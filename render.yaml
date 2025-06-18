@@ -1,4 +1,11 @@
 services:
+  build:
+    packages:
+      - curl
+      - build-essential
+      - pkg-config
+      - libssl-dev
+      - rustc
   - type: web
     name: uk-company-ownership-api
     env: python
